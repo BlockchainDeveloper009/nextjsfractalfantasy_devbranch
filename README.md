@@ -6,3 +6,4 @@
 #Vercelli
 #CSS
 #Hardhat
+#Solidity
