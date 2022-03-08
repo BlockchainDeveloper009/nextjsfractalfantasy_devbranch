@@ -1,97 +1,182 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import prop from '../common/prop'
 import styles from '../styles/Home.module.css'
-import { useRouter } from 'next/router'
-let fractalUrl = 'https://www.fractal.is/'
-import { PROP } from "../common/prop";
+import React, { useEffect, useState } from 'react';
+import twitterLogo from './assets/twitter-logo.svg';
+import linkedInLogo from './assets/linkedIn.jpg';
+import fractalFantasyLogo from  './assets/fractalfantasy-logo.jpg';
+import * as solanaWeb3 from '@solana/web3.js';
+import { ethers } from "ethers";
+import { getParsedNftAccountsByOwner,isValidSolanaAddress, createConnectionConfig,} from "@nfteyez/sol-rayz";
+import axios from "axios";
+const solanaWeb4 = require('@solana/web3.js');
+console.log(solanaWeb4.Account);
+let perspublicKey = 'Gziqn5y2C8sDPnYjJaewpzKTAyaVZNEoyQsEHk68ygZB'
+// Constants
+
+let arr = []
+const TWITTER_HANDLE = 'fractalfantasy1';
+
+const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
+
+const LINKEDIN_HANDLE = 'fractalfantasy';
+
+const LINKEDIN_LINK = `https://www.linkedin.com/company/${LINKEDIN_HANDLE}/`;
 
 export default function Home() {
-  const router = useRouter()
-  function redirectToFractal() {
-    console.log('hit redirect')
-    window.open(fractalUrl)
 
 
+
+  // State
+  const [walletAddress, setWalletAddress] = useState(null);
+
+  const checkIfWalletIsConnected = async () => {
+    
+    try {
+      
+      const { solana } = window;
+
+      if (solana) {
+        if (solana.isPhantom) {
+          console.log('Phantom wallet found!');
+          const response = await solana.connect({ onlyIfTrusted: true });
+          console.log(
+            'Connected with Public Key:',
+            response.publicKey.toString()
+          );
+          
+          let connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('devnet'), 'confirmed');
+            // After Connecting
+            
+          connection.getBalance(response.publicKey).then(function(value) { console.log('L42 BALANCE = '+value); })
+
+          let connectData = true;
+  try {
+    if (connectData === true) {
+    //  const connect =    createConnectionConfig(clusterApiUrl("devnet"));
+     
+      let ownerToken = response.publicKey;
+      // const result = isValidSolanaAddress(ownerToken);
+      // console.log("result", result);
+const nfts = await getParsedNftAccountsByOwner({
+        publicAddress: ownerToken,
+        connection: new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('devnet'), 'confirmed'),
+        serialization: true,
+      });
+      //return nfts;
+      let nftData = nfts;
+    var data = Object.keys(nftData).map((key) => nftData[key]);                                                                    let arr = [];
+    let n = data.length;
+    for (let i = 0; i < n; i++) {
+      console.log(data[i].data.uri);
+      let val = await axios.get(data[i].data.uri);
+      arr.push(val);
+    }
+    console.log('l:72'+arr)
+     return arr;
+    }
+  } catch (error) {
+    console.log(error);
   }
+          
 
-  function redirect() {
-    console.log('hit redirect')
-    router.push('./redirectedPage')
+          /*
+           * Set the user's publicKey in state to be used later!
+           */
+          console.log('setting WalletAddress')
+          setWalletAddress(response.publicKey.toString());
+        }
+      } else {
+        alert('Solana object not found! Get a Phantom Wallet 👻');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
+   /*
+   * Let's define this method so our code doesn't break.
+   * We will write the logic for this next!
+   */
+   const connectWallet = async () => {
+    const { solana } = window;
+      if (solana) {
+        //provider = solana;
+        const response = await solana.connect();
+        console.log('Connected with Public Key:', response.publicKey.toString());
+        setWalletAddress(response.publicKey.toString());
+      }
+  };
 
-  }
+  const renderNotConnectedContainer = () => (
+
+    
+    <button
+      className="cta-button connect-wallet-button"
+      onClick={connectWallet}
+    >
+      Connect to Wallet
+    </button>
+  );
+
+  const connectWalletjs = async () => {
+    const provider = new ethers.providers.Web3Provider(
+      window.ethereum
+    )
+    
+    await provider.send("eth_requestAccounts", [])
+    
+    const account =  provider.getSigner()
+  };
+
+  useEffect(() => {
+    const onLoad = async () => {
+      await checkIfWalletIsConnected();
+    };
+    window.addEventListener('load', onLoad);
+    return () => window.removeEventListener('load', onLoad);
+  }, []);
+
   return (
-    <div>
-
-      <button onClick={redirectToFractal}>ClickMe to Redirect</button>
-      <a href={PROP.LINKEDIN_LINK}></a>
-    </div>
-  )
-}
-
-
-/*
-
-<div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <meta name="description" content="Generated by create next app" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <div className="App">
+ 
+      <div className="container">
+     
+        <div className="header-container">
+          <p className="header"><img class="logo" src={fractalFantasyLogo}/> Fractal Fantasy</p>
+          <p className="sub-text">Improve your 'health' & 'wellbeing' to earn tokens</p>
+          {/* Render your connect to wallet button right here */}
+          {!walletAddress && renderNotConnectedContainer()}
+         
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
-      </footer>
+        <div className="footer-container">
+          <div>
+            <img alt="Twitter Logo" className="twitter-logo" src={twitterLogo} />
+            <a
+              className="footer-text"
+              href={TWITTER_LINK}
+              target="_blank"
+              rel="noreferrer"
+            >{`@${TWITTER_HANDLE}`}</a> 
+             <img alt="Linkedin Logo" className="linkedIn-logo" src={linkedInLogo} />
+          <a
+            className="footer-text"
+            href={LINKEDIN_LINK}
+            target="_blank"
+            rel="noreferrer"
+          >{`@${LINKEDIN_HANDLE}`}</a>
+          </div>       
+          
+        
+        </div>
+          
+        
+      </div>
     </div>
-    */
+  );
+}
+/*
+ <p className="sub-text">Try using JS to connect to phantom</p>
+          {}{//connectUsingJS()}
+          <p className="sub-text">nfts from phantom</p>
+          /*console.log(getAllNftData())*/
