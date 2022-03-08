@@ -1,11 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Navbar from './navbar'
 import prop from '../common/prop'
 import styles from '../styles/Home.module.css'
 import { useRouter } from 'next/router'
 let fractalUrl = 'https://www.fractal.is/'
-let link = new prop().LINKEDIN_LINK
+import { PROP } from "../common/prop";
 
 export default function Home() {
   const router = useRouter()
@@ -24,9 +23,9 @@ export default function Home() {
   }
   return (
     <div>
-    
+
       <button onClick={redirectToFractal}>ClickMe to Redirect</button>
-      <a href={link}></a>
+      <a href={PROP.LINKEDIN_LINK}></a>
     </div>
   )
 }
