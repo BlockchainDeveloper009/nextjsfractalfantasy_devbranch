@@ -1,4 +1,9 @@
 .logo {
     color: white;
     margin-right: 0.5rem;
+    display: inline-block;
+}
+
+.iconLink {
+    display: inline-flex;
 }

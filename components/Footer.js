@@ -18,15 +18,15 @@ export default function Footer() {
 
   return (
     <Flex padding={4} h={'10%'} w={'100%'} bg={'MenuText'} justify='center' align='center'>
-      <Flex flexDirection={'column'}>
-        <Link display='flex' color={'white'} href={TWITTER_LINK} target='_blank' rel='noreferrer'>
-          <BsTwitter className={styles.logo} color='white' />  {" "}{`@${TWITTER_HANDLE}`}
-        </Link>
 
-        <Link display='flex' color={'white'} href={LINKEDIN_LINK} target='_blank' rel='noreferrer'>
-          <BsLinkedin className={styles.logo} color='white' /> {" "} LinkedIn
-        </Link>
-      </Flex>
+      <Link className={styles.iconLink} color={'white'} href={TWITTER_LINK} target='_blank' rel='noreferrer'>
+        <BsTwitter className={styles.logo} color='white' />  {" "}{`@${TWITTER_HANDLE}`}
+      </Link>
+
+      <Link className={styles.iconLink} color={'white'} href={LINKEDIN_LINK} target='_blank' rel='noreferrer'>
+        <BsLinkedin className={styles.logo} color='white' /> {" "} LinkedIn
+      </Link>
+
     </Flex >
 
   )
