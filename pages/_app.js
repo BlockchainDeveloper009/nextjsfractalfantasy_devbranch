@@ -3,17 +3,17 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 
 // FIXED COMPONENTS
-import Navbar from '../components/navbar'
-import Footer from '../components/footer'
+import Layout from '../components/Layout'
+
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
-      <Navbar />
+      <Layout />
       <Component {...pageProps} />
-      <Footer />
     </ChakraProvider>
   )
 }
 
 export default MyApp
+
