@@ -1,12 +1,12 @@
 import React from "react";
 import Footer from "./Footer";
-import Nav from "./navbar";
+import Navbar from "./navbar";
 
 
 // props
 // destucturing
 
-export default function Layout({children}) {
+export default function Layout({ children }) {
   return (
     <div>
       <Navbar />

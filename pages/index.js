@@ -2,7 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React, { useEffect, useState } from 'react';
-import fractalFantasyLogo from '../public/assets/fractalfantasy-logo.jpg';
+import twitterLogo from './assets/twitter-logo.svg';
+import linkedInLogo from './assets/linkedIn.jpg';
+import fractalFantasyLogo from './assets/fractalfantasy-logo.jpg';
 import * as solanaWeb3 from '@solana/web3.js';
 import { ethers } from "ethers";
 import { getParsedNftAccountsByOwner, isValidSolanaAddress, createConnectionConfig, } from "@nfteyez/sol-rayz";
@@ -10,16 +12,16 @@ import axios from "axios";
 const solanaWeb4 = require('@solana/web3.js');
 console.log(solanaWeb4.Account);
 let perspublicKey = 'Gziqn5y2C8sDPnYjJaewpzKTAyaVZNEoyQsEHk68ygZB'
-
 // Constants
+
 let arr = []
 const TWITTER_HANDLE = 'fractalfantasy1';
+
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
+
 const LINKEDIN_HANDLE = 'fractalfantasy';
+
 const LINKEDIN_LINK = `https://www.linkedin.com/company/${LINKEDIN_HANDLE}/`;
-
-// IMPORTED COMPONENTS
-
 
 export default function Home() {
 
@@ -27,7 +29,7 @@ export default function Home() {
 
   // State
   const [walletAddress, setWalletAddress] = useState(null);
-
+  let images = []
   const checkIfWalletIsConnected = async () => {
 
     try {
@@ -46,7 +48,8 @@ export default function Home() {
           let connection = new solanaWeb3.Connection(solanaWeb3.clusterApiUrl('devnet'), 'confirmed');
           // After Connecting
 
-          connection.getBalance(response.publicKey).then(function (value) { console.log('L42 BALANCE = ' + value); })
+          connection.getBalance(response.publicKey).then(function (value) { console.log('L51 BALANCE = ' + value); })
+          // connection.(response.publicKey).then(function(value) { console.log('L51 BALANCE = '+value); })
 
           let connectData = true;
           try {
@@ -66,8 +69,12 @@ export default function Home() {
               var data = Object.keys(nftData).map((key) => nftData[key]); let arr = [];
               let n = data.length;
               for (let i = 0; i < n; i++) {
-                console.log(data[i].data.uri);
+                console.log('LLLLL71::::' + data[i].data.uri);
+                console.log('LLLLL72::::' + data[i].data.Image);
+
                 let val = await axios.get(data[i].data.uri);
+                images.push(data[i].data.Image)
+                console.log('vall--->' + val)
                 arr.push(val);
               }
               console.log('l:72' + arr)
@@ -106,7 +113,7 @@ export default function Home() {
     }
   };
 
-  const renderNotConnectedContainer = () =>
+  const renderNotConnectedContainer = () => (
 
 
     <button
@@ -115,7 +122,7 @@ export default function Home() {
     >
       Connect to Wallet
     </button>
-    ;
+  );
 
   const connectWalletjs = async () => {
     const provider = new ethers.providers.Web3Provider(
@@ -141,15 +148,19 @@ export default function Home() {
       <div className="container">
 
         <div className="header-container">
-          <p className="header"><Image height={100} width={100} className="logo" alt='logo' src={fractalFantasyLogo} />
-            <p>Fractal Fantasy</p></p>
-          <p className="sub-text">Improve your &apos;health&apos; & &apos;wellbeing&apos; to earn tokens</p>
+          <p className="header"><img class="logo" src={fractalFantasyLogo} /> Fractal Fantasy</p>
+          <p className="sub-text">Improve your 'health' & 'wellbeing' to earn tokens</p>
           {/* Render your connect to wallet button right here */}
           {!walletAddress && renderNotConnectedContainer()}
 
         </div>
-      </div>
+        <div>
+          <img src={images[0]} alt="loading..." />
+        </div>
 
+
+
+      </div>
     </div>
   );
 }
