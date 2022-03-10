@@ -1,27 +1,31 @@
 import React from 'react'
+import { Flex, Box } from '@chakra-ui/react'
+
+// COMPONENTS
+import Roadmap from '../components/about/roadmap'
+import Team from '../components/about/team'
+import Mission from '../components/about/mission'
 
 
 
 export default function aboutUs() {
   return (
-    <div className="container">
-
-      {/* https://icobench.com/ico/solana */}
-      <title>Meet Fractal Fantasy Team</title>
-      <meta name="description" content="Product Owner" />
-      <link rel="icon" href="/favicon.ico" />
-      <ui>
-        <ol><a href="">ProductOwner</a></ol>
-        <ol><a href="">ProjectManager</a></ol>
-        <ol><a href="">Backend (Solana) & FrontEnd (Nextjs) Developers</a></ol>
-        <ol><a href="">GameEngineers</a></ol>
-      </ui>
-
-
-
-
-    </div>
-
+    <html>
+      <header>
+        <title>Meet Fractal Fantasy Team</title>
+        <meta name="description" content="Product Owner" />
+      </header>
+      <main>
+        <Flex mt={'2rem'} gap={"2rem"} flexDir={'column'} align={'center'}>
+          <Box width={{ base: '90%', md: '60%' }} fontSize={'4rem'}>
+            About Us
+          </Box>
+          <Mission />
+          <Roadmap />
+          <Team />
+        </Flex>
+      </main>
+    </html>
   )
 }
 

@@ -3,9 +3,8 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 
 // FIXED COMPONENTS
-import Layout from '../components/Layout'
 import Navbar from '../components/navbar'
-import Footer from '../components/Footer'
+import Footer from '../components/footer'
 
 function MyApp({ Component, pageProps }) {
   return (

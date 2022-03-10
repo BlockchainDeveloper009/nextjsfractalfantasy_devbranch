@@ -20,10 +20,10 @@ export default function Navbar() {
 
   }
   return (
-    <Flex px={'4'} align={'center'} height={'6vh'} bg={'MenuText'}>
-      <Button background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToHome}>Home</Button>
-      <Button background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToAboutUs}>About Us</Button>
-      <Button background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToContactUs}>Contact Us</Button>
+    <Flex px={4} align={'center'} height={'6%'} bg={'MenuText'}>
+      <Button m={2} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToHome}>Home</Button>
+      <Button m={2} ml={'auto'} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToAboutUs}>About Us</Button>
+      <Button m={2} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToContactUs}>Contact Us</Button>
 
     </Flex>
   )

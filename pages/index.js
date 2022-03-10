@@ -12,15 +12,12 @@ import axios from "axios";
 const solanaWeb4 = require('@solana/web3.js');
 console.log(solanaWeb4.Account);
 let perspublicKey = 'Gziqn5y2C8sDPnYjJaewpzKTAyaVZNEoyQsEHk68ygZB'
-// Constants
 
+// Constants
 let arr = []
 const TWITTER_HANDLE = 'fractalfantasy1';
-
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
-
 const LINKEDIN_HANDLE = 'fractalfantasy';
-
 const LINKEDIN_LINK = `https://www.linkedin.com/company/${LINKEDIN_HANDLE}/`;
 
 export default function Home() {
@@ -143,25 +140,30 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="App">
+    <html>
+      <div className="App">
 
-      <div className="container">
+        <div className="container">
 
-        <div className="header-container">
-          <p className="header"><img class="logo" src={fractalFantasyLogo} /> Fractal Fantasy</p>
-          <p className="sub-text">Improve your 'health' & 'wellbeing' to earn tokens</p>
-          {/* Render your connect to wallet button right here */}
-          {!walletAddress && renderNotConnectedContainer()}
+          <div className="header-container">
+            <p className="header"><Image height={100} width={100} class="logo" src={fractalFantasyLogo} alt='fractalfantasy' />
+              <p>Fractal Fantasy</p>
+            </p>
+            <p className="sub-text">Improve your &apos;health&apos; &amp; &apos;wellbeing&apos; to earn tokens</p>
+            {/* Render your connect to wallet button right here */}
+            {!walletAddress && renderNotConnectedContainer()}
+
+          </div>
+          <div>
+            {/* <Image src={images[0]} alt="loading..." /> */}
+          </div>
+
+
 
         </div>
-        <div>
-          <img src={images[0]} alt="loading..." />
-        </div>
-
-
-
       </div>
-    </div>
+    </html>
+
   );
 }
 /*

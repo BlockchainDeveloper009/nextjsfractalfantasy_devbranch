@@ -40,6 +40,8 @@
   margin: 0;
   font-size: 50px;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
 }
 
 .sub-text {
