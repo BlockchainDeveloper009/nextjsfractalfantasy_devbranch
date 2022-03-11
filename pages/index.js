@@ -9,6 +9,8 @@ import * as solanaWeb3 from '@solana/web3.js';
 import { ethers } from "ethers";
 import { getParsedNftAccountsByOwner, isValidSolanaAddress, createConnectionConfig, } from "@nfteyez/sol-rayz";
 import axios from "axios";
+import { useRouter } from 'next/router'
+
 const solanaWeb4 = require('@solana/web3.js');
 console.log(solanaWeb4.Account);
 let perspublicKey = 'Gziqn5y2C8sDPnYjJaewpzKTAyaVZNEoyQsEHk68ygZB'
@@ -22,7 +24,7 @@ const LINKEDIN_LINK = `https://www.linkedin.com/company/${LINKEDIN_HANDLE}/`;
 
 export default function Home() {
 
-
+  const router = useRouter()
 
   // State
   const [walletAddress, setWalletAddress] = useState(null);
@@ -75,26 +77,45 @@ export default function Home() {
                 arr.push(val);
               }
               console.log('l:72' + arr)
-              return arr;
+              
             }
           } catch (error) {
             console.log(error);
           }
 
-
+          redirectToGameDownload();
           /*
            * Set the user's publicKey in state to be used later!
            */
           console.log('setting WalletAddress')
           setWalletAddress(response.publicKey.toString());
+         
         }
       } else {
+        redirectToGetWallet();
         alert('Solana object not found! Get a Phantom Wallet 👻');
+
       }
     } catch (error) {
       console.error(error);
     }
   };
+  function redirectToGameDownload() {
+    
+    console.log('redirect to gotoGameDownload page')
+    router.push('./gotoGameDownload')
+    
+  }
+  function redirectToGetWallet() {
+    console.log('redirect to GetWallet page')
+    router.push('./getWallet')
+    
+  }
+  function redirectToGetFractals() {
+    console.log('redirect to GetWallet page')
+    router.push('./getFractals')
+    
+  }
 
   /*
   * Let's define this method so our code doesn't break.
