@@ -18,7 +18,7 @@ export default function Member({ memberInfo }) {
                 src={img}
                 alt={name}
             />
-            <Text fontSize={'2rem'}>
+            <Text fontSize={'1.5rem'}>
                 {name}
             </Text>
             <Text fontSize={'1rem'} color={'gray.500'}>

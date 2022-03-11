@@ -6,7 +6,13 @@
 }
 
 .iconLink {
-    display: inline-flex;
     align-items: center;
     font-size: 1rem;
+}
+
+.container {
+    background-color: yellow;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
 }

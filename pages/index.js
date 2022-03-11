@@ -10,6 +10,7 @@ import { ethers } from "ethers";
 import { getParsedNftAccountsByOwner, isValidSolanaAddress, createConnectionConfig, } from "@nfteyez/sol-rayz";
 import axios from "axios";
 import { useRouter } from 'next/router'
+import { Box, Text, Link } from '@chakra-ui/react';
 
 const solanaWeb4 = require('@solana/web3.js');
 console.log(solanaWeb4.Account);
@@ -21,6 +22,9 @@ const TWITTER_HANDLE = 'fractalfantasy1';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const LINKEDIN_HANDLE = 'fractalfantasy';
 const LINKEDIN_LINK = `https://www.linkedin.com/company/${LINKEDIN_HANDLE}/`;
+
+// IMAGE
+
 
 export default function Home() {
 
@@ -77,7 +81,7 @@ export default function Home() {
                 arr.push(val);
               }
               console.log('l:72' + arr)
-              
+
             }
           } catch (error) {
             console.log(error);
@@ -89,7 +93,7 @@ export default function Home() {
            */
           console.log('setting WalletAddress')
           setWalletAddress(response.publicKey.toString());
-         
+
         }
       } else {
         redirectToGetWallet();
@@ -101,20 +105,20 @@ export default function Home() {
     }
   };
   function redirectToGameDownload() {
-    
+
     console.log('redirect to gotoGameDownload page')
     router.push('./gotoGameDownload')
-    
+
   }
   function redirectToGetWallet() {
     console.log('redirect to GetWallet page')
     router.push('./getWallet')
-    
+
   }
   function redirectToGetFractals() {
     console.log('redirect to GetWallet page')
     router.push('./getFractals')
-    
+
   }
 
   /*
@@ -161,29 +165,36 @@ export default function Home() {
   }, []);
 
   return (
-    <html>
-      <div className="App">
-
-        <div className="container">
-
-          <div className="header-container">
-            <p className="header"><Image height={100} width={100} class="logo" src={fractalFantasyLogo} alt='fractalfantasy' />
-              <p>Fractal Fantasy</p>
-            </p>
-            <p className="sub-text">Improve your &apos;health&apos; &amp; &apos;wellbeing&apos; to earn tokens</p>
-            {/* Render your connect to wallet button right here */}
-            {!walletAddress && renderNotConnectedContainer()}
-
-          </div>
-          <div>
-            {/* <Image src={images[0]} alt="loading..." /> */}
-          </div>
+    <html className='main'>
+      <Box className="App">
+        <Box className={styles.container}>
 
 
+          <Box classNames={styles.header}>
+            <Image height={150} width={150} src={fractalFantasyLogo} alt='fractalfantasy' />
+            <Text className={styles.title}>Fractal Fantasy</Text>
+          </Box>
+          <Text className={styles.subText}>Improve your &apos;health&apos; &amp; &apos;wellbeing&apos; to earn tokens</Text>
+          {/* Render your connect to wallet button right here */}
+          {walletAddress ? <Link w='25%' p={2}
+            fontWeight={'bold'}
+            borderRadius={'.5rem'}
+            fontSize={'1.25rem'}
+            background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'}
+            href='gotoGameDownload'>
+            Download Game
+          </Link> : renderNotConnectedContainer()}
 
-        </div>
-      </div>
-    </html>
+
+
+          {/* <Image src={images[0]} alt="loading..." /> */}
+
+
+
+
+        </Box>
+      </Box>
+    </html >
 
   );
 }

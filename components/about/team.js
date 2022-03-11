@@ -8,7 +8,7 @@ export default function Team() {
     let m1 = {
         name: "Arun Nadarasa",
         role: "Founder",
-        img: "https://bit.ly/ryan-florenc"
+        img: "https://bit.ly/ryan-florence"
     }
 
     let m2 = {
@@ -36,7 +36,7 @@ export default function Team() {
         role: "Project Manager",
         img: "https://bit.ly/kent-c-dodds"
     }
-    
+
     let members = [
         m1, m2, m3, m4, m5, m6
     ]
@@ -48,7 +48,7 @@ export default function Team() {
                 Our Team
             </Box>
             <Grid templateRows='repeat(3 1fr)'
-                templateColumns='repeat(3, 1fr)' gap={4}>
+                templateColumns='repeat(3, 1fr)' gap={4} mb={8}>
                 {members.map((member) => <Member key={Math.random()} memberInfo={member} />)}
 
             </Grid>

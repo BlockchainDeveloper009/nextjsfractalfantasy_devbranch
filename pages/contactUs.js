@@ -48,6 +48,7 @@ export default function contactUs() {
                 We host fun and exciting events each day
               </Text>
             </Flex>
+            
             {/* SOCIAL LINK */}
             <Flex flexDir={'column'} justify={'center'} p={4}>
               <Text px='4' fontSize='1.25rem '>
@@ -57,6 +58,7 @@ export default function contactUs() {
                 We host fun and exciting events each day
               </Text>
             </Flex>
+            
             {/* SOCIAL LINK */}
             <Flex flexDir={'column'} justify={'center'} p={4}>
               <Text px='4' fontSize='1.25rem '>
@@ -66,6 +68,7 @@ export default function contactUs() {
                 We host fun and exciting events each day
               </Text>
             </Flex>
+          
             {/* SOCIAL LINK */}
             <Flex flexDir={'column'} justify={'center'} p={4}>
               <Text px='4' fontSize='1.25rem '>
@@ -75,6 +78,7 @@ export default function contactUs() {
                 We host fun and exciting events each day
               </Text>
             </Flex>
+         
             {/* SOCIAL LINK */}
             <Flex flexDir={'column'} justify={'center'} p={4}>
               <Text px='4' fontSize='1.25rem '>
