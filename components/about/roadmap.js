@@ -11,6 +11,7 @@ export default function Roadmap() {
                 Our Roadmap
             </Box>
             <Box>
+                R1: Talk about Game: 
                 Proof of History, the basis for the Solana network,
                 is a sequence of computation that can provide a way
                 to cryptographically verify passage of time between
@@ -20,6 +21,7 @@ export default function Roadmap() {
             </Box>
 
             <Box>
+                R2: Talk about Metaverse: 
                 It  is possible to synchronize multiple Proof of History
                 generators in the Solana network by mixing the sequence
                 state from each generator to each other generator, and

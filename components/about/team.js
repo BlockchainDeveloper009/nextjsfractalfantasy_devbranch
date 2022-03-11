@@ -6,23 +6,39 @@ import Member from './member'
 
 export default function Team() {
     let m1 = {
-        name: "Josh McCown",
-        role: "Chief Executive Officer",
-        img: "https://bit.ly/dan-abramov"
+        name: "Arun Nadarasa",
+        role: "Founder",
+        img: "https://bit.ly/ryan-florenc"
     }
 
     let m2 = {
-        name: "Ryna Florence",
-        role: "Chief Operating Officer",
+        name: "Harish G Krishnamurthy",
+        role: "Chief Technology Officer & Architect",
         img: "https://bit.ly/ryan-florence"
     }
     let m3 = {
-        name: "George Cooper",
-        role: "Cheif Technology Officer",
+        name: "Rudresh ",
+        role: "Chief Creation Officer",
         img: "https://bit.ly/kent-c-dodds"
     }
+    let m4 = {
+        name: "Steve ",
+        role: "Web Developer",
+        img: "https://bit.ly/kent-c-dodds"
+    }
+    let m5 = {
+        name: "Jebin Rohit",
+        role: "Game Designer",
+        img: "https://bit.ly/kent-c-dodds"
+    }
+    let m6 = {
+        name: "Dejan Bukovic",
+        role: "Project Manager",
+        img: "https://bit.ly/kent-c-dodds"
+    }
+    
     let members = [
-        m1, m2, m3, m1, m2, m3, m1, m2, m3,
+        m1, m2, m3, m4, m5, m6
     ]
     return (
 
