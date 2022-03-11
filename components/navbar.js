@@ -1,5 +1,6 @@
-import { Flex, Box, Button } from '@chakra-ui/react'
+import { Flex, Box, Button, Link } from '@chakra-ui/react'
 import styles from "../styles/Navbar.module.css"
+import Image from 'next/image'
 
 import { useRouter } from 'next/router'
 export default function Navbar() {
@@ -19,10 +20,29 @@ export default function Navbar() {
     router.push('./contactUs')
 
   }
+
+  const connectWallet = () => {
+    console.log("IMPLEMENT CONNECT WALLET FROM INDEX.JS")
+  }
+
+  const renderNotConnectedContainer = () => {
+    return (<Button
+      m={2} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'}
+      onClick={connectWallet}
+      ml={'auto'}
+    >
+      Connect to Wallet
+    </Button>
+    )
+  };
+
   return (
     <Flex px={4} align={'center'} height={'6%'} bg={'MenuText'}>
-      <Button m={2} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToHome}>Home</Button>
-      <Button m={2} ml={'auto'} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToAboutUs}>About Us</Button>
+      <Link onClick={redirectToHome} >
+        <Image m={2} alt='logo' src={'/assets/netflix.png'} height={50} width={100} />
+      </Link>
+      {renderNotConnectedContainer()}
+      <Button m={2} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToAboutUs}>About Us</Button>
       <Button m={2} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToContactUs}>Contact Us</Button>
 
     </Flex>
