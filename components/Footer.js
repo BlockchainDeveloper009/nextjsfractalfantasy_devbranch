@@ -12,7 +12,7 @@ const LINKEDIN_LINK = `https://www.linkedin.com/company/${LINKEDIN_HANDLE}/`;
 
 export default function footer() {
   return (
-    <Flex className={styles.container} padding={16} h={"10%"} w={'100%'} bg={'MenuText'} justify='space-around' align='center'>
+    <Flex py='4rem' backgroundColor={'black'} w={'100%'} justify='space-around' alignItems={'center'}>
 
       <Link className={styles.iconLink} color={'white'} href={TWITTER_LINK} target='_blank' rel='noreferrer'>
         <BsTwitter className={styles.logo} color='white' />  {" "}{`@${TWITTER_HANDLE}`}

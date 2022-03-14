@@ -2,15 +2,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import React, { useEffect, useState } from 'react';
-import twitterLogo from './assets/twitter-logo.svg';
-import linkedInLogo from './assets/linkedIn.jpg';
-import fractalFantasyLogo from './assets/fractalfantasy-logo.jpg';
+
 import * as solanaWeb3 from '@solana/web3.js';
 import { ethers } from "ethers";
 import { getParsedNftAccountsByOwner, isValidSolanaAddress, createConnectionConfig, } from "@nfteyez/sol-rayz";
 import axios from "axios";
 import { useRouter } from 'next/router'
-import { Box, Text, Link } from '@chakra-ui/react';
+import { Box, Text, Link, Flex } from '@chakra-ui/react';
 
 const solanaWeb4 = require('@solana/web3.js');
 console.log(solanaWeb4.Account);
@@ -23,8 +21,13 @@ const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
 const LINKEDIN_HANDLE = 'fractalfantasy';
 const LINKEDIN_LINK = `https://www.linkedin.com/company/${LINKEDIN_HANDLE}/`;
 
-// IMAGE
-
+// IMAGES
+import twitterLogo from './assets/twitter-logo.svg';
+import linkedInLogo from './assets/linkedIn.jpg';
+import fractalFantasyLogo from './assets/fractalfantasy-logo.jpg';
+import field1 from '../public/assets/homepage/field1.png';
+import field2 from '../public/assets/homepage/field2.png';
+import field3 from '../public/assets/homepage/field3.png';
 
 export default function Home() {
 
@@ -135,7 +138,7 @@ export default function Home() {
     }
   };
 
-  const renderNotConnectedContainer = () => (
+  const renderNotConnectedContainer = () =>
 
 
     <button
@@ -144,7 +147,7 @@ export default function Home() {
     >
       Connect to Wallet
     </button>
-  );
+    ;
 
   const connectWalletjs = async () => {
     const provider = new ethers.providers.Web3Provider(
@@ -166,34 +169,73 @@ export default function Home() {
 
   return (
     <html className='main'>
+      <video className={styles.backgroundVid} playsinline autoPlay muted loop poster={fractalFantasyLogo}>
+        <source src="/test-vid.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
       <Box className="App">
         <Box className={styles.container}>
-
-
-          <Box classNames={styles.header}>
-            <Image height={150} width={150} src={fractalFantasyLogo} alt='fractalfantasy' />
+          <Flex classNames={styles.header} flexDir={'column'} justifyContent='center' alignItems={'center'}>
+            <Box className={styles.mainImg}>
+              <Image src={fractalFantasyLogo} alt='fractalfantasy' />
+            </Box>
             <Text className={styles.title}>Fractal Fantasy</Text>
-          </Box>
+          </Flex>
           <Text className={styles.subText}>Improve your &apos;health&apos; &amp; &apos;wellbeing&apos; to earn tokens</Text>
-          {/* Render your connect to wallet button right here */}
-          {walletAddress ? <Link w='25%' p={2}
+          {walletAddress && <Link w='25%' p={2}
             fontWeight={'bold'}
             borderRadius={'.5rem'}
             fontSize={'1.25rem'}
             background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'}
             href='gotoGameDownload'>
             Download Game
-          </Link> : renderNotConnectedContainer()}
-
-
-
-          {/* <Image src={images[0]} alt="loading..." /> */}
-
-
-
-
+          </Link>}
         </Box>
-      </Box>
+
+
+        <Box className={styles.gallery}>
+          <Box className={styles.galHead}>
+            Gallery
+          </Box>
+          <Flex className={styles.galImages} gap='2rem'>
+            <Box backgroundImage={`url(${field1.src})`} >
+              Wonderful Backgrounds
+            </Box>
+            <Box backgroundImage={`url(${field2.src})`} >
+              Wonderful Backgrounds
+            </Box>
+            <Box backgroundImage={`url(${field3.src})`} >
+              Wonderful Backgrounds
+            </Box>
+          </Flex>
+        </Box>
+
+        <Box className={styles.gallery}>
+          <Box className={styles.galHead}>
+            Gameplay
+          </Box>
+          <Flex className={styles.gamePlay} gap='2rem'>
+
+            <video className={styles.gameVid} playsinline autoPlay muted loop poster={fractalFantasyLogo}>
+              <source src="/test-vid.webm" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+
+            <Box className={styles.gameCont} >
+              <Box fontSize='2rem'>
+                Beta Gameplay
+              </Box>
+              <Box>
+                See full video {' '}
+                <Link href='https://www.twitch.tv/videos/1416604313?sr=a&t=54s' target={'_blank'} color={'lightblue'}>
+                  here
+                </Link>
+              </Box>
+
+            </Box>
+          </Flex>
+        </Box>
+      </Box >
     </html >
 
   );
