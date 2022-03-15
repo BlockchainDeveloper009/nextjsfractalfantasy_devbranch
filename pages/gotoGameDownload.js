@@ -5,7 +5,7 @@ export default function GotoGameDownload() {
 
   const router = useRouter();
   function redirectToGameDownloadPage() {
-    let downloadUrl = 'https://drive.google.com/file/d/1Rp7d2P3r8sl_tE6iM8szT1g57o1issoV/view?usp=sharing'
+    let downloadUrl = 'https://we.tl/t-QSBuOT1Tse'
     console.log('redirect to ' + downloadUrl)
     router.push(downloadUrl)
   }

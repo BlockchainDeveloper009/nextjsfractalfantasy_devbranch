@@ -11,7 +11,7 @@ export default function getWallet() {
     
   return (
     <div>
-         <Flex px={'4'} align={'center'} height={'6vh'} bg={'MenuText'}>
+         <Flex px={'4'} flexDir='column' justify={'center'} align={'center'} height={'80vh'} bg={'MenuText'}>
             <Button background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToPhantomWebsite}>Download phantom Wallet</Button>
         </Flex>
         

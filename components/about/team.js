@@ -17,7 +17,7 @@ export default function Team() {
         img: "/assets/teamImages/Harish_Krishnamurthy.jpg"
     }
     let m3 = {
-        name: "Rudresh ",
+        name: "Rudresh",
         role: "Chief Creation Officer",
         img: "/assets/teamImages/Rudresh_Kumar.png"
     }

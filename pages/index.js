@@ -202,11 +202,11 @@ export default function Home() {
         <Box className={styles.container}>
           <Flex className={styles.header} flexDir={'column'} justifyContent='center' alignItems={'center'}>
             <Box className={styles.mainImg}>
-              <Image src={fractalFantasyLogo} alt='fractalfantasy' />
+              
             </Box>
-            <Text className={styles.title}>Fractal Fantasy</Text>
+            
           </Flex>
-          <Text className={styles.subText}>Improve your &apos;health&apos; &amp; &apos;wellbeing&apos; to earn tokens</Text>
+          
           {walletAddress && <Link w='25%' p={2}
             fontWeight={'bold'}
             borderRadius={'.5rem'}

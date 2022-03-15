@@ -16,7 +16,7 @@ export default function getFractals() {
         
         <Flex px={'4'} align={'center'} > 
         <Box width={{ base: '90%', md: '60%' }} fontSize={'4rem'}>
-         You need fractals to downlaod this game!!!
+          <Box>You need blue fractals or admin issued custom Avatar NFT to download Level 1 version of Fractal Fantasy game !!!</Box>
           </Box>
         </Flex>
         <Flex px={'4'} align={'center'} height={'6vh'} bg={'MenuText'}>
