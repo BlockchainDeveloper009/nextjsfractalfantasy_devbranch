@@ -85,10 +85,6 @@
     width: 100%;
 }
 
-.gameVid {
-    height: 15rem;
-}
-
 .gameCont {
     display: flex;
     flex-direction: column;

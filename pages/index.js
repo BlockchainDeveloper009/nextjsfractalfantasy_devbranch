@@ -34,6 +34,7 @@ import fractalFantasyLogo from './assets/fractalfantasy-logo.jpg';
 import field1 from '../public/assets/homepage/field1.png';
 import field2 from '../public/assets/homepage/field2.png';
 import field3 from '../public/assets/homepage/field3.png';
+import gameplay from '../public/assets/homepage/gameplay.png'
 
 
 export default function Home() {
@@ -239,11 +240,14 @@ export default function Home() {
             Gameplay
           </Box>
           <Flex className={styles.gamePlay} gap='2rem'>
+            <Box boxSize={'md'} h='16rem' >
+              <Image src={gameplay} alt='gameplay' />
+            </Box>
 
-            <video className={styles.gameVid} playsInline autoPlay muted loop poster={fractalFantasyLogo}>
+            {/* <video className={styles.gameVid} playsInline autoPlay muted loop poster={fractalFantasyLogo}>
               <source src="/test-vid.mp4" type="video/mp4" />
               Your browser does not support the video tag.
-            </video>
+            </video> */}
 
             <Box className={styles.gameCont} >
               <Box fontSize='2rem'>
@@ -255,7 +259,6 @@ export default function Home() {
                   here
                 </Link>
               </Box>
-
             </Box>
           </Flex>
         </Box>
