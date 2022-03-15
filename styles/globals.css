@@ -8,17 +8,11 @@
     padding: 30px;
     color: red;
 }
-.main {
-    height: 100vh;
-}
 
 .App {
-    height: 100%;
-    background-color: rgb(20, 20, 20);
     overflow: scroll;
-    text-align: center;
     overflow: hidden;
-    background-color: #35aee2;
+    z-index: 1;
 }
 
 .authed-container {
