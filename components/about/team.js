@@ -7,14 +7,14 @@ import Member from './member'
 export default function Team() {
     let m1 = {
         name: "Arun Nadarasa",
-        role: "Founder",
-        img: "../pages/assets/teamImages/Arun_Nadarasa.jpeg"
+        role: "Chief Evangelist Officer",
+        img: "../../pages/assets/teamImages/Arun_Nadarasa.jpeg"
     }
 
     let m2 = {
         name: "Harish G Krishnamurthy",
         role: "Chief Technology Officer & Architect",
-        img: "https://bit.ly/ryan-florence"
+        img: "../../pages/assets/teamImages/Harish_Krishnamurthy.jpg"
     }
     let m3 = {
         name: "Rudresh ",
