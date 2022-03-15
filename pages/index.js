@@ -189,6 +189,10 @@ export default function Home() {
 
   return (
     <html className='main'>
+      <header>
+        <title>Fractal Fantasy</title>
+        <meta name="description" content="Product Owner" />
+      </header>
       <video className={styles.backgroundVid} playsinline autoPlay muted loop poster={fractalFantasyLogo}>
         <source src="/test-vid.mp4" type="video/mp4" />
         Your browser does not support the video tag.

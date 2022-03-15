@@ -8,33 +8,33 @@ export default function Team() {
     let m1 = {
         name: "Arun Nadarasa",
         role: "Chief Evangelist Officer",
-        img: "../../pages/assets/teamImages/Arun_Nadarasa.jpeg"
+        img: "/assets/teamImages/Arun_Nadarasa.jpeg"
     }
 
     let m2 = {
         name: "Harish G Krishnamurthy",
         role: "Chief Technology Officer & Architect",
-        img: "../../pages/assets/teamImages/Harish_Krishnamurthy.jpg"
+        img: "/assets/teamImages/Harish_Krishnamurthy.jpg"
     }
     let m3 = {
         name: "Rudresh ",
         role: "Chief Creation Officer",
-        img: "https://bit.ly/kent-c-dodds"
+        img: "/assets/teamImages/Rudresh_Kumar.png"
     }
     let m4 = {
-        name: "Steve ",
+        name: "Steve",
         role: "Web Developer",
-        img: "https://bit.ly/kent-c-dodds"
+        img: "/assets/teamImages/Steve.jpeg"
     }
     let m5 = {
         name: "Jebin Rohit",
         role: "Game Designer",
-        img: "https://bit.ly/kent-c-dodds"
+        img: "/assets/teamImages/Jebin_Rohit.jpeg"
     }
     let m6 = {
         name: "Dejan Bukovic",
         role: "Project Manager",
-        img: "https://bit.ly/kent-c-dodds"
+        img: "/assets/teamImages/Mindlezz.jpg"
     }
 
     let members = [
