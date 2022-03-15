@@ -224,13 +224,13 @@ export default function Home() {
           </Box>
           <Flex className={styles.galImages} gap='2rem'>
             <Box backgroundImage={`url(${field1.src})`} >
-              Wonderful Backgrounds
+              Landscape scene 1 
             </Box>
             <Box backgroundImage={`url(${field2.src})`} >
-              Wonderful Backgrounds
+              Landscape scene 2
             </Box>
             <Box backgroundImage={`url(${field3.src})`} >
-              Wonderful Backgrounds
+              Landscape scene 3
             </Box>
           </Flex>
         </Box>
@@ -255,7 +255,7 @@ export default function Home() {
               </Box>
               <Box>
                 See gameplay {' '}
-                <Link href='https://www.twitch.tv/videos/1416604313?sr=a&t=54s' target={'_blank'} color={'lightblue'}>
+                <Link href='https://www.twitch.tv/videos/1426342762' target={'_blank'} color={'lightblue'}>
                   here
                 </Link>
               </Box>

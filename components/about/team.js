@@ -32,13 +32,18 @@ export default function Team() {
         img: "/assets/teamImages/Jebin_Rohit.jpeg"
     }
     let m6 = {
-        name: "Dejan Bukovic",
+        name: "Mindlezz",
+        role: "Sound Designer",
+        img: "/assets/teamImages/Mindlezz.jpg"
+    }
+    let m7 = {
+        name: "Dean Bukovic",
         role: "Project Manager",
         img: "/assets/teamImages/Mindlezz.jpg"
     }
 
     let members = [
-        m1, m2, m3, m4, m5, m6
+        m1, m2, m3, m4, m5, m6, m7
     ]
     return (
 
