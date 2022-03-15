@@ -193,13 +193,13 @@ export default function Home() {
         <title>Fractal Fantasy</title>
         <meta name="description" content="Product Owner" />
       </header>
-      <video className={styles.backgroundVid} playsinline autoPlay muted loop poster={fractalFantasyLogo}>
+      <video className={styles.backgroundVid} playsInline autoPlay muted loop poster={fractalFantasyLogo}>
         <source src="/test-vid.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
       <Box className="App">
         <Box className={styles.container}>
-          <Flex classNames={styles.header} flexDir={'column'} justifyContent='center' alignItems={'center'}>
+          <Flex className={styles.header} flexDir={'column'} justifyContent='center' alignItems={'center'}>
             <Box className={styles.mainImg}>
               <Image src={fractalFantasyLogo} alt='fractalfantasy' />
             </Box>
@@ -240,7 +240,7 @@ export default function Home() {
           </Box>
           <Flex className={styles.gamePlay} gap='2rem'>
 
-            <video className={styles.gameVid} playsinline autoPlay muted loop poster={fractalFantasyLogo}>
+            <video className={styles.gameVid} playsInline autoPlay muted loop poster={fractalFantasyLogo}>
               <source src="/test-vid.mp4" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
@@ -250,7 +250,7 @@ export default function Home() {
                 Beta Gameplay
               </Box>
               <Box>
-                See full video {' '}
+                See gameplay {' '}
                 <Link href='https://www.twitch.tv/videos/1416604313?sr=a&t=54s' target={'_blank'} color={'lightblue'}>
                   here
                 </Link>
