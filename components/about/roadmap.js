@@ -1,3 +1,59 @@
+
+import React from 'react'
+import { Box, Flex } from '@chakra-ui/react'
+
+
+export default function Roadmap() {
+    return (
+
+
+        <Flex width={{ base: '90%', md: '60%' }}  flexDir={'column'} gap={4}>
+            <Box fontSize={'2rem'}>
+                Our Roadmap
+            </Box>
+            <Box>
+                Within the game, there will be a series of activities directly related to the 
+                Social Determinants of Health (SDHs):
+            </Box>
+
+            <Box>
+                ⦁	Income and social protection
+                ⦁	Education
+                ⦁	Unemployment and job insecurity
+                ⦁	Working life conditions
+                ⦁	Food insecurity
+                ⦁	Housing, basic amenities and the environment
+                ⦁	Early childhood development
+                ⦁	Social inclusion and non-discrimination
+                ⦁	Structural conflict
+                ⦁	Access to affordable health services of decent quality
+                ⦁	Digital inclusion 
+            </Box>
+
+            <Box>
+                It will also introduce the role of a Social Prescribing Link Workers (SPLWs) as spiritual guide (Shiva) to help the gamer complete the activities. There will be a baseline score set by a series of questions at the beginning of playing the game and once again after completion. 
+
+                Each activity will be developed with a specialised organisation like:
+                    ⦁	a financial organisation for financial literacy
+                    ⦁	a housing organisation for basic housing advice (with clear disclaimers)
+                    ⦁	a mindfulness organisation for meditation practice
+
+                Since our audience will be a global one, we will work towards different editions of the game to make it relevant for a specific country like India, Singapore and UK in regards to the housing and financial informations. 
+
+            </Box>
+        </Flex >
+
+    )
+}
+
+
+// https://icobench.com/ico/solana
+
+/*  TODO: 
+1 what is our mission
+2.  road map
+3. the team
+=======
 import React from 'react'
 import { Box, Flex } from '@chakra-ui/react'
 
@@ -55,4 +111,5 @@ export default function Roadmap() {
 1 what is our mission
 2.  road map
 3. the team
+>>>>>>> Stashed changes
 */

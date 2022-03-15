@@ -8,7 +8,7 @@ export default function Team() {
     let m1 = {
         name: "Arun Nadarasa",
         role: "Founder",
-        img: "https://bit.ly/ryan-florence"
+        img: "../pages/assets/teamImages/Arun_Nadarasa.jpeg"
     }
 
     let m2 = {
