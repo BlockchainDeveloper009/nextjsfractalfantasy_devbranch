@@ -11,12 +11,19 @@ import { getParsedNftAccountsByOwner, isValidSolanaAddress, createConnectionConf
 import axios from "axios";
 import { useRouter } from 'next/router'
 import { Box, Text, Link } from '@chakra-ui/react';
+import {handleNftAuthentication} from '../scripts/nftAuthentication'
 
+
+let blueFractalAddr = ['EqVFJjLMT8ZbiURXbi9t2UCrw3UmHRxULvTDtgLqzgba','harrypksNFT']
+let redFractalAddr = ['6unsZbubuzsd9qBWbS4QAg8eUU1nWgFXtC7Nyz42vbJR','Harryini_NFT']
+let purpleFractalAddr = ['J7spGEJ17wyMPFj6Hhws8BuVqraBAD7yFSVkEGX9RM18','Entreprenur_NFT']
+let goldFractalAddr = []
 const solanaWeb4 = require('@solana/web3.js');
-console.log(solanaWeb4.Account);
+
 let perspublicKey = 'Gziqn5y2C8sDPnYjJaewpzKTAyaVZNEoyQsEHk68ygZB'
 
 // Constants
+let ownerNfts = []
 let arr = []
 const TWITTER_HANDLE = 'fractalfantasy1';
 const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`;
@@ -73,7 +80,7 @@ export default function Home() {
               let n = data.length;
               for (let i = 0; i < n; i++) {
                 console.log('LLLLL71::::' + data[i].data.uri);
-                console.log('LLLLL72::::' + data[i].data.Image);
+
 
                 let val = await axios.get(data[i].data.uri);
                 images.push(data[i].data.Image)
@@ -104,6 +111,33 @@ export default function Home() {
       console.error(error);
     }
   };
+
+   /*
+   * Let's define this method so our code doesn't break.
+   * We will write the logic for this next!
+   */
+   const connectWallet = async () => {
+     console.log('calling nftAuth....')
+      // console.log('handle2==='+printMsg)
+
+      // printMsg.printMsg()
+      console.log('nftAuth=='+handleNftAuthentication)
+      ownerNfts = await handleNftAuthentication()
+      validate(ownerNfts)
+     
+    
+  };
+  function validate(ownerNfts){
+    console.log('validatingNFT token')
+    
+    if(blueFractalAddr.some(r=> ownerNfts.includes(r)))
+    {
+      
+      redirectToGameDownload();
+    }else{
+      redirectToGetFractals();
+    }
+  }
   function redirectToGameDownload() {
 
     console.log('redirect to gotoGameDownload page')
@@ -121,19 +155,6 @@ export default function Home() {
 
   }
 
-  /*
-  * Let's define this method so our code doesn't break.
-  * We will write the logic for this next!
-  */
-  const connectWallet = async () => {
-    const { solana } = window;
-    if (solana) {
-      //provider = solana;
-      const response = await solana.connect();
-      console.log('Connected with Public Key:', response.publicKey.toString());
-      setWalletAddress(response.publicKey.toString());
-    }
-  };
 
   const renderNotConnectedContainer = () => (
 
