@@ -2,7 +2,7 @@ import { Flex,Box, Button,Link } from '@chakra-ui/react'
 import React from 'react'
 import { useRouter } from 'next/router'
 
-export default function getFractals() {
+export default function GetFractals() {
   const router = useRouter()
   function redirectToFractalsPage() {
     let fractalUrl = 'https://nft.fractal.is/'
