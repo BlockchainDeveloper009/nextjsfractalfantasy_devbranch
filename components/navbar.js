@@ -102,7 +102,7 @@ export default function Navbar() {
       </Link>
       {!walletAddress && renderNotConnectedContainer()}
       <ButtonGroup variant='outline' spacing='6'>
-      <Button m={2} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToAboutUs}>About Us</Button>
+      <Button m={2} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToAboutUs} ml={'auto'}>About Us</Button>
       <Button m={2} background={'-webkit-linear-gradient(right, #ff8867, #ff52ff)'} onClick={redirectToContactUs}>Contact Us</Button>  
       </ButtonGroup>
       
