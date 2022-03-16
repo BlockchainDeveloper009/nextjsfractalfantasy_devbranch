@@ -141,19 +141,19 @@ export default function Home() {
       redirectToGetFractals();
     }
   }
- 
 
 
-  const renderNotConnectedContainer = () => (
 
-
-    <button
-      className="cta-button connect-wallet-button"
-      onClick={connectWallet}
-    >
-      Connect to Wallet
-    </button>
-  );
+  const renderNotConnectedContainer = () => {
+    return (
+      <button
+        className="cta-button connect-wallet-button"
+        onClick={connectWallet}
+      >
+        Connect to Wallet
+      </button>
+    )
+  };
 
   const connectWalletjs = async () => {
     const provider = new ethers.providers.Web3Provider(
@@ -174,7 +174,7 @@ export default function Home() {
   }, []);
 
   return (
-    <html className='main'>
+    <div className='main'>
       <header>
         <title>Fractal Fantasy</title>
         <meta name="description" content="Product Owner" />
@@ -187,11 +187,11 @@ export default function Home() {
         <Box className={styles.container}>
           <Flex className={styles.header} flexDir={'column'} justifyContent='center' alignItems={'center'}>
             <Box className={styles.mainImg}>
-              
+
             </Box>
-            
+
           </Flex>
-          
+
           {walletAddress && <Link w='25%' p={2}
             fontWeight={'bold'}
             borderRadius={'.5rem'}
@@ -209,7 +209,7 @@ export default function Home() {
           </Box>
           <Flex className={styles.galImages} gap='2rem'>
             <Box backgroundImage={`url(${field1.src})`} >
-              Landscape scene 1 
+              Landscape scene 1
             </Box>
             <Box backgroundImage={`url(${field2.src})`} >
               Landscape scene 2
@@ -248,7 +248,7 @@ export default function Home() {
           </Flex>
         </Box>
       </Box >
-    </html >
+    </div >
 
   );
 }
