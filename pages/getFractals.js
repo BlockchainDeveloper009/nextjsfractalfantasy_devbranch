@@ -15,8 +15,14 @@ export default function getFractals() {
     <div>
         
         <Flex px={'4'} flexDir='column' justify={'center'} align={'center'} height={'80vh'} bg={'MenuText'} > 
-        <Box width={{ base: '90%', md: '60%' }} fontSize={'4rem'}>
-        You need blue fractals or admin issued custom Avatar NFT to download Level 1 version of Fractal Fantasy game !!!
+        <Box width={{ base: '90%', md: '70%' }} fontSize={'4rem'} color={'red'}>
+        Oops! NFT Authentication Failed!
+        </Box>
+        <Box width={{ base: '90%', md: '70%' }} fontSize={'4rem'} color={'blue'}>
+        Please buy blue fractals Or 
+        </Box>
+        <Box width={{ base: '90%', md: '70%' }} fontSize={'4rem'} color={'yellow'}>
+         Contact Admin on Twitter (@fractalfantasy1) to mint custom Avatar NFT to download Fractal Fantasy 1.0 !!!
         </Box>
         </Flex>
         <Flex px={'4'} align={'center'} height={'6vh'} bg={'MenuText'}>

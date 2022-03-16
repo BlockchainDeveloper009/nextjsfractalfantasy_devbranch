@@ -13,10 +13,11 @@ export default function Mission() {
             </Box>
 
             <Box>
-            “To bring Social Prescribing to the global population via gamification.”
+            <b>“To bring Social Prescribing to the global population via gamification.”</b> 
+            </Box>
+            <Box>
             Fractal Fantasy is building on the concept of Play-to-Earn (P2E) & 
             Move-to-Earn (M2E) games to Fulfill-to-Earn (F2E) games using Maslow's hierarchy of needs.
-
             </Box>
 
             <Box>

@@ -29,7 +29,7 @@ export default function Navbar() {
 
   }
   
-  
+ 
   const connectWallet = async () => {
     const { solana } = window;
     
@@ -44,7 +44,7 @@ export default function Navbar() {
         validate(ownerNfts)
       }else{
         console.log('No wallet, download wallet');  
-        alert('Cannot connect to wallet, Download phantom wallet and try again')
+        alert('Missing "Phantom" wallet, Download phantom wallet and try again')
       }
     }catch(error){
       console.log('No wallet found exception');
@@ -62,6 +62,7 @@ export default function Navbar() {
     }
   }
   function redirectToGameDownload() {
+    console.log('authComplete'+authComplete)
     if(authComplete)
     {
       console.log('redirect to gotoGameDownload page')
@@ -100,8 +101,9 @@ export default function Navbar() {
         <Image m={2} alt='logo' src={fractalFantasyLogo} height={30} width={30} />
         <Text color={'white'} fontWeight='bold' fontSize={'1.25rem'} > Fractal Fantasy</Text>
       </Link>
-      {!walletAddress && renderNotConnectedContainer()}
-      <ButtonGroup variant='outline' spacing='6'>
+      <ButtonGroup ml={'auto'}>
+      {renderNotConnectedContainer()}
+      
       <Button m={2} background={'-webkit-linear-gradient(left, #ff8867, #ff52ff)'} onClick={redirectToAboutUs} ml={'auto'}>About Us</Button>
       <Button m={2} background={'-webkit-linear-gradient(right, #ff8867, #ff52ff)'} onClick={redirectToContactUs}>Contact Us</Button>  
       </ButtonGroup>

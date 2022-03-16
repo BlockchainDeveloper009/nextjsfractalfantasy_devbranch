@@ -141,22 +141,7 @@ export default function Home() {
       redirectToGetFractals();
     }
   }
-  function redirectToGameDownload() {
-
-    console.log('redirect to gotoGameDownload page')
-    router.push('./gotoGameDownload')
-
-  }
-  function redirectToGetWallet() {
-    console.log('redirect to GetWallet page')
-    router.push('./getWallet')
-
-  }
-  function redirectToGetFractals() {
-    console.log('redirect to GetWallet page')
-    router.push('./getFractals')
-
-  }
+ 
 
 
   const renderNotConnectedContainer = () => (
