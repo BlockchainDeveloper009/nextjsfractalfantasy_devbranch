@@ -4,7 +4,7 @@ import { ChakraProvider } from '@chakra-ui/react'
 
 // FIXED COMPONENTS
 import Navbar from '../components/navbar'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 
 function MyApp({ Component, pageProps }) {
   return (
