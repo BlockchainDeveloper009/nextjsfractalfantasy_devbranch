@@ -2,7 +2,7 @@
 ##
 Link to the [Beta app](https://nextjsfractalfantasy-devbranch-deployv1-harrypks19-gmailcom.vercel.app/)
 
-Summary:
+#Summary:
 --------
 
 This project is created to compete at Riptide Hackathon. 
@@ -13,7 +13,7 @@ urban life.
 
 This app is prototype colloborating with Social-prescribing advocate Arun Nadarasa, Game engine developers, web3 developers.
 
-Functionality of beta version of Fractal Fantasy website, where user is supposed perform below Actions.
+#Functionality of beta version of Fractal Fantasy website, where user is supposed perform below Actions.
 
 1. User connects their phantom wallet. 
 2. if user holds Blue Fractal / Avatar issued by FF team, then they are redirected to game download page.
@@ -21,5 +21,8 @@ Functionality of beta version of Fractal Fantasy website, where user is supposed
 4. Meet our web3, gaming, backend engineers.
 5. Follows us on social media
 
+#techstack
+
+ Web3js | Arweave | hardhat | nextjs | Vercel | chakra-ui | axios
 
 
