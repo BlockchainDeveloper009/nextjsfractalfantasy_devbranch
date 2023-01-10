@@ -2,6 +2,9 @@
 ##
 Link to the [Beta app](https://nextjsfractalfantasy-devbranch-deployv1-harrypks19-gmailcom.vercel.app/)
 
+Summary:
+--------
+
 This project is created to compete at Riptide Hackathon. 
 Social-prescribing is getting popular around the world, this app is designed to address two purpose.
 1. Allow users to download game play based on the nft's they are holding
